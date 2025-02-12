@@ -1,0 +1,68 @@
+<shared-img [url]="'img/041.webp'" [w]="'100%'" [h]="'400px'" ></shared-img>
+<div class="text-center container pt-4">
+  <div>
+    <h1 class="text-center aboreto-regular">NATURAL BEAUTY SKINCARE</h1>
+    <p class="text-center adamina-regular">Experience a luxurious skincare solution meticulously designed to nourish, protect and
+      enhance the natural beauty
+      of every skin</p>
+
+    <div>
+
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping"><img src="svg/search.svg" width="25px" height="25px"></span>
+        <input type="text" class="form-control" placeholder="Search your product" aria-label="Username"
+               aria-describedby="addon-wrapping">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false"><img src="svg/bars.svg" width="25px" height="25px">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div>
+
+      <div class="container pt-5">
+
+        <div class="row justify-content-center">
+          @for (product of products; track $index) {
+            <div class="col-3 pt-4 pb-4">
+              <div class="card mx-auto" style="width: 18rem;">
+                <img src="img/041.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-center aboreto-regular">{{ product.name }}</h5>
+                  <p class="card-text text-center"> $ {{ product.price }}</p>
+                </div>
+              </div>
+            </div>
+          } @empty {
+            <h2>Products not found</h2>
+          }
+        </div>
+        <div class="d-flex justify-content-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
