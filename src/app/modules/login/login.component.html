@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="left-panel">
+        <h2>SIGN IN</h2>
+        <p>glowing skin is always in</p>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="E-MAIL">
+            </div>
+            <div class="mb-3 password-container">
+                <input type="password" class="form-control" id="password" placeholder="PASSWORD">
+                <button type="button" class="toggle-password" id="togglePassword">
+                    <i class="bi bi-eye-slash"></i>
+                </button>
+            </div>
+            <div class="d-flex justify-content-end mb-3">
+                <button (click)="goToPassword()" class="btn-link text-decoration-none text-muted forgot-password-btn" style="font-size: 13px;">FORGOT YOUR PASSWORD?</button>
+            </div>
+            <button type="submit" class="btn btn-primary">SIGN IN</button>
+            <a class="d-block text-center mt-3" href="#">NOT A MEMBER? SIGN UP</a>
+        </form>
+    </div>
+    <div class="right-panel d-none d-md-block">
+        <img src="Login/img1Login.jpg" class="img-fluid w-100 h-100" alt="Login Image" style="object-fit: cover;">
+    </div>
+</div>
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const passwordField = document.getElementById('password');
+        const icon = this.querySelector('i');
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            icon.classList.remove('bi-eye-slash');
+            icon.classList.add('bi-eye');
+        } else {
+            passwordField.type = 'password';
+            icon.classList.remove('bi-eye');
+            icon.classList.add('bi-eye-slash');
+        }
+    });
+</script>
