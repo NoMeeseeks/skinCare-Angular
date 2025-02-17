@@ -6,6 +6,7 @@ import {CartComponent} from './modules/shoppingCart/cart/cart.component';
 import {HomePageComponent} from './modules/home-page/home-page.component';
 import {RegistroComponent} from './modules/registro/registro.component';
 import {AboutUsComponent} from './modules/about-us/about-us.component';
+import { PerfilUsuarioComponent } from './modules/perfil-usuario/perfil-usuario.component';
 
 export const routes: Routes = [
 
@@ -32,6 +33,10 @@ export const routes: Routes = [
       {
         path: 'shoppingCart',
         component: CartComponent,
+      },
+      {
+        path:'Perfil',
+        component: PerfilUsuarioComponent
       }
     ]
   },
