@@ -15,12 +15,12 @@
                         <div class="col-8 card rounded">
                             <div class="p-3">
                                 <div class="text-start">
-                                    <a href="#">Brand</a>
-                                    <p>BEAUTY OF JONSEON</p>
-                                    <h5>Light On Sérum : Centella + Vita C 100ml</h5>
+                                    <a>Brand: <strong>{{product?.brand}}</strong></a>
+                                    <h1 class="aboreto-regular">{{product?.product_name}}</h1>
+<!--                                  TODO:HACER DINAMICO LAS CATEGORIAS-->
                                     <p>SERUM</p>
                                     <p>Day care</p>
-                                    <h6>$16.20</h6>
+                                    <h6 class="aboreto-regular">${{product?.price}}</h6>
 
                                     <div class="d-flex align-items-center">
                                         <button class="btn btn-secondary me-2">-</button>
@@ -29,18 +29,8 @@
                                         <button class="btn btn-secondary ms-2">+</button>
                                     </div>
 
-                                    <h6 class="mt-3">Description</h6>
-                                    <p>Light On Serum combines the regenerating power of Centella Asiatica with the
-                                        brightening
-                                        effects of Vitamin C to hydrate, even out skin tone, and revitalize the
-                                        complexion.
-                                        Its
-                                        lightweight, fast-absorbing formula helps reduce dark spots, improve skin
-                                        elasticity,
-                                        and promote a radiant, healthy glow. Perfect for all skin types, this serum is
-                                        ideal
-                                        for
-                                        those looking to combat dullness and achieve a more luminous appearance.</p>
+                                    <h6 class="mt-3 aboreto-regular"><strong>Description</strong></h6>
+                                    <p class="aboreto-regular">{{product?.description}}</p>
                                 </div>
                             </div>
                         </div>

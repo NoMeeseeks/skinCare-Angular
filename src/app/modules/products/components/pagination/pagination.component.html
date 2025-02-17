@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+
+      <!--First Page-->
+      <li class="page-item" [class.disabled]="currentPage === 1 ">
+        <a class="page-link" aria-label="Previous" (click)="changePage(currentPage - 1)">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+
+      @for (page of getPagesArray(totalPages);track $index){
+        <li class="page-item px-2"  [class.active]="currentPage === $index + 1  "><a class="page-link" (click)="changePage($index + 1)">{{$index + 1 }}</a></li>
+      }
+
+      <!--Final Page-->
+      <li class="page-item" [class.disabled]="currentPage === totalPages ">
+        <a class="page-link" aria-label="Next" (click)="changePage(currentPage + 1)">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
