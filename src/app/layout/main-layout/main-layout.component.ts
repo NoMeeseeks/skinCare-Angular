@@ -5,7 +5,7 @@ import {NavBarComponent} from '../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [RouterOutlet, FooterComponent, RouterLink, NavBarComponent],
+  imports: [RouterOutlet, FooterComponent, NavBarComponent],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css'
 })

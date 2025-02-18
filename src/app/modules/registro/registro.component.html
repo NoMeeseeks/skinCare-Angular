@@ -8,35 +8,64 @@
         <!-- Sección del formulario con scroll si es necesario -->
         <div class="col-md-6 p-4 d-flex flex-column justify-content-center" style="overflow-y: auto; max-height: 100%;">
             <h3 class="text-center mb-4">WELCOME TO LUMI</h3>
-            <form>
+            <div id="registerForm">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="name">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="lastName">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">E-mail</label>
-                    <input type="email" class="form-control">
+                    <input type="email" class="form-control" id="email">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" id="password">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" id="confirmPassword">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Date of Birth</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" id="dob">
                 </div>
-                <button type="submit" class="btn btn-secondary w-75 mx-auto d-block">REGISTER</button>
-            </form>
+                <a  class="btn btn-secondary w-75 mx-auto d-block"  [routerLink]="'/login'">REGISTER</a>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío del formulario
+
+        let name = document.getElementById("name").value;
+        let lastName = document.getElementById("lastName").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let confirmPassword = document.getElementById("confirmPassword").value;
+        let dob = document.getElementById("dob").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        let userData = {
+            name: name,
+            lastName: lastName,
+            email: email,
+            password: password,
+            dob: dob
+        };
+
+        localStorage.setItem("user", JSON.stringify(userData));
+        alert("Registration successful!");
+    });
+</script>

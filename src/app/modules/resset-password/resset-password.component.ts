@@ -17,6 +17,6 @@ export class RessetPasswordComponent {
 
   }
   goToLogin() {
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/login']);
   }
 }

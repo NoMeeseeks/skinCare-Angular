@@ -17,11 +17,11 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: 'HomePage',
+        path: 'homePage',
         component: HomePageComponent
       },
       {
-        path: 'AboutUs',
+        path: 'aboutUs',
         component: AboutUsComponent
       },
       {
@@ -47,11 +47,11 @@ export const routes: Routes = [
     component: RegistroComponent
   },
   {
-    path:'Login',
+    path:'login',
     component: LoginComponent
   },
   {
-    path:'RessetPassword',
+    path:'ressetPassword',
     component: RessetPasswordComponent
   }
 ];
