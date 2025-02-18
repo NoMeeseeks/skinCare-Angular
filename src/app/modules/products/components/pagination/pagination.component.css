@@ -1,31 +1,33 @@
 /* Efecto para la página activa */
 .pagination .page-item.active .page-link {
-  background-color: #715285;   /* Color de fondo cuando la página está activa */
-  border-color: #ffffff;       /* Color del borde para la página activa */
-  color: white;                /* Color del texto para la página activa */
-  transform: scale(1.1);        /* Aumenta ligeramente el tamaño para resaltar la página */
-  transition: background-color 0.3s ease, transform 0.3s ease;  /* Transición suave para el cambio */
+  background-color: #ff6b81;   /* Soft pink for active page */
+  border-color: #ff6b81;        /* Matching border color */
+  color: white;                 /* White text for contrast */
+  transform: scale(1.1);        /* Slightly increase size to highlight */
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
 }
 
 /* Estilo predeterminado para los enlaces de las páginas */
 .pagination .page-item .page-link {
-  color: #007bff;               /* Color del texto predeterminado */
-  border: 1px solid #ffffff;    /* Borde blanco */
-  cursor: pointer;              /* Cursor de mano para indicar que es un elemento interactivo */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para hover */
+  color: #333;                  /* Dark gray for text */
+  border: 1px solid #e0e0e0;    /* Light gray border */
+  background-color: white;      /* White background */
+  cursor: pointer;              /* Pointer cursor for interactivity */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
 }
 
 /* Efecto hover cuando el usuario pasa el mouse sobre el enlace de la página */
 .pagination .page-item .page-link:hover {
-  background-color: #6c5a7b;     /* Color de fondo cuando el mouse pasa sobre la página */
-  color: white;                  /* Color blanco para el texto cuando el mouse pasa */
-  transform: scale(1.05);        /* Aumenta el tamaño sutilmente al pasar el mouse */
+  background-color: #ff6b81;    /* Soft pink on hover */
+  color: white;                 /* White text on hover */
+  border-color: #ff6b81;        /* Matching border color on hover */
+  transform: scale(1.05);       /* Slight scale-up effect */
 }
 
 /* Estilo para los enlaces de las páginas deshabilitadas */
 .pagination .page-item.disabled .page-link {
-  color: #6c757d;               /* Color gris para las páginas deshabilitadas */
-  pointer-events: none;          /* Desactiva los clics en las páginas deshabilitadas */
-  background-color: transparent;
-  border-color: #ffffff;        /* Borde blanco para las páginas deshabilitadas */
+  color: #b0b0b0;               /* Light gray for disabled text */
+  pointer-events: none;          /* Disable clicks */
+  background-color: white;       /* White background */
+  border-color: #e0e0e0;         /* Light gray border */
 }

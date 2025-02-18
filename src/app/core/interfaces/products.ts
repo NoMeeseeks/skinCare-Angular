@@ -6,6 +6,6 @@ export interface Products {
   price:          number;
   image_url:       string;
   quantity:       number;
-  skin_type:       string[];
+  skincare_type:       string[];
   expiration_date: string;
 }

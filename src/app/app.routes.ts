@@ -37,7 +37,7 @@ export const routes: Routes = [
         component: CartComponent,
       },
       {
-        path:'Perfil',
+        path:'perfil',
         component: PerfilUsuarioComponent
       }
     ]

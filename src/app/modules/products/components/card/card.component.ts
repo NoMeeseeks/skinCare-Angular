@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '../../../../core/services/products.service';
 import { Products } from '../../../../core/interfaces/products';
@@ -9,7 +9,7 @@ import { Products } from '../../../../core/interfaces/products';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  products: Products[] = [];
+  @Input() products: Products[] = []; // Input property for filtered products
   currentPage: number = 1;
   itemsPerPage: number = 12;
   paginatedProducts: Products[] = [];
@@ -20,26 +20,19 @@ export class CardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadProducts();
-
     // Subscribe to changes in the current page
     this.productService.currentPage$.subscribe((page) => {
       this.currentPage = page;
       this.updatePaginatedProducts();
     });
+
+    // Initialize paginated products
+    this.updatePaginatedProducts();
   }
 
-  loadProducts(): void {
-    this.productService.products().subscribe(
-      (data) => {
-        // @ts-ignore
-        this.products = data['products'] as Products[];
-        this.updatePaginatedProducts();
-      },
-      (error) => {
-        console.error('Error fetching products:', error);
-      }
-    );
+  ngOnChanges(): void {
+    // Update paginated products whenever the input products change
+    this.updatePaginatedProducts();
   }
 
   updatePaginatedProducts(): void {

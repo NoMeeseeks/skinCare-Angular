@@ -1,4 +1,4 @@
-<shared-img [url]="'img/041.webp'" [w]="'100%'" [h]="'400px'" ></shared-img>
+<shared-img [url]="'products/11.jpg'" [w]="'100%'" [h]="'400px'" ></shared-img>
 
 <div class="text-center container">
     <div>
@@ -8,7 +8,7 @@
                     <div class="row">
 
                         <div class="col-4">
-                            <img src="https://dev-uees-team.s3.us-east-2.amazonaws.com/proyectoSkinCare/SKIN1004_Madagascar_Centella_Ampoule_55ml.webp" class="img-fluid rounded" alt="..."
+                            <img src="{{product?.image_url}}" class="img-fluid rounded" alt="..."
                                  style="object-fit: cover; width: 100%; height: 100%;">
                         </div>
 
@@ -18,8 +18,9 @@
                                     <a>Brand: <strong>{{product?.brand}}</strong></a>
                                     <h1 class="aboreto-regular">{{product?.product_name}}</h1>
 <!--                                  TODO:HACER DINAMICO LAS CATEGORIAS-->
-                                    <p>SERUM</p>
-                                    <p>Day care</p>
+                                  @for (items of product?.skincare_type;track $index){
+                                    <a>{{items}}</a>
+                                  }
                                     <h6 class="aboreto-regular">${{product?.price}}</h6>
 
                                     <div class="d-flex align-items-center">

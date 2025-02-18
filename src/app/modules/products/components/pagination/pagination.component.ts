@@ -18,7 +18,7 @@ export class PaginationComponent {
   }
 
   get totalPages(): number {
-    return Math.ceil((this.productService.getTotalProducts() / this.thingsPerPage));
+    return 5;
   }
 
   getPagesArray(totalPages: number): number[] {
