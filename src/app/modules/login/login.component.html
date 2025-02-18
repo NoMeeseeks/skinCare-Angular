@@ -2,7 +2,7 @@
     <div class="left-panel">
         <h2>SIGN IN</h2>
         <p>glowing skin is always in</p>
-        <form>
+        <div>
             <div class="mb-3">
                 <input type="email" class="form-control" id="email" placeholder="E-MAIL">
             </div>
@@ -15,9 +15,9 @@
             <div class="d-flex justify-content-end mb-3">
                 <button (click)="goToPassword()" class="btn-link text-decoration-none text-muted forgot-password-btn" style="font-size: 13px;">FORGOT YOUR PASSWORD?</button>
             </div>
-            <button type="submit" class="btn btn-primary">SIGN IN</button>
-            <a class="d-block text-center mt-3" href="#">NOT A MEMBER? SIGN UP</a>
-        </form>
+            <button  class="btn btn-primary" [routerLink]="'/homePage'">SIGN IN</button>
+            <a class="d-block text-center mt-3" [routerLink]="'/register'">NOT A MEMBER? SIGN UP</a>
+        </div>
     </div>
     <div class="right-panel d-none d-md-block">
         <img src="Login/img1Login.jpg" class="img-fluid w-100 h-100" alt="Login Image" style="object-fit: cover;">
