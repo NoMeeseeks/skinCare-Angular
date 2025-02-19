@@ -17,7 +17,7 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: 'homePage',
+        path: '',
         component: HomePageComponent
       },
       {
