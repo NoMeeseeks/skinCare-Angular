@@ -16,4 +16,25 @@ export class LoginComponent {
     this.router.navigate(['/ressetPassword']);
   }
 
+  loginUser() {
+    let emailInput = (document.getElementById('email') as HTMLInputElement).value;
+    let passwordInput = (document.getElementById('password') as HTMLInputElement).value;
+
+    let storedUser = localStorage.getItem('registeredUser');
+
+    if (storedUser) {
+      let userData = JSON.parse(storedUser);
+
+      if (userData.email === emailInput && userData.password === passwordInput) {
+        alert("Login successful!");
+        localStorage.setItem('currentUser', JSON.stringify(userData)); // Guarda el usuario actual
+        this.router.navigate(['/homePage']); // Redirige a la homePage
+      } else {
+        alert("Invalid email or password.");
+      }
+    } else {
+      alert("No registered user found.");
+    }
+  }
+
 }

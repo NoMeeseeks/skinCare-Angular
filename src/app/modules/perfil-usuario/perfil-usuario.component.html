@@ -18,17 +18,12 @@
             
             <!-- Información del usuario -->
             <div class="col-8">
-                <h6 class="fw-bold mb-1">ELISA WATSON</h6>
-                <p class="small mb-1"><strong>E-MAIL:</strong> eli.watson.com</p>
-                <p class="small mb-1"><strong>DOB:</strong> 12/09/03</p>
-                <p class="small mb-1"><strong>AGE:</strong> 21</p>
-                <p class="small mb-2"><strong>ADDRESS:</strong> Samborodon, Las Torres Villa 20 MZ 34</p>
+                <h6 class="fw-bold mb-1">{{ user?.name }} {{ user?.lastName }}</h6>
+                <p class="small mb-1"><strong>E-MAIL:</strong> {{ user?.email }}</p>
+                <p class="small mb-1"><strong>BIRTHDAY:</strong> {{ user?.dob }}</p>
+                <p class="small mb-1"><strong>AGE:</strong> {{ calculateAge(user?.dob) }}</p>
+                <p class="small mb-2"><strong>ADDRESS:</strong> Samborondón, Las Torres Villa 20 MZ 34</p>
             </div>
-        </div>
-
-        <!-- Botón centrado -->
-        <div class="text-center mt-2">
-            <button class="btn btn-outline-dark btn-sm px-3">EDIT</button>
         </div>
     </div>
 </div>

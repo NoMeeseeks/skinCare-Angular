@@ -8,36 +8,40 @@
         <!-- Sección del formulario con scroll si es necesario -->
         <div class="col-md-6 p-4 d-flex flex-column justify-content-center" style="overflow-y: auto; max-height: 100%;">
             <h3 class="text-center mb-4">WELCOME TO LUMI</h3>
-            <div id="registerForm">
+            <form (submit)="registerUser(name.value, lastName.value, email.value, password.value, confirmPassword.value, dob.value)">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" #name required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName">
+                        <input type="text" class="form-control" #lastName required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" #email required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" #password required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword">
+                    <input type="password" class="form-control" #confirmPassword required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Date of Birth</label>
-                    <input type="date" class="form-control" id="dob">
+                    <input type="date" class="form-control" #dob required>
                 </div>
-                <a  class="btn btn-secondary w-75 mx-auto d-block"  [routerLink]="'/login'">REGISTER</a>
-            </div>
-        </div>
+                <button type="submit" class="btn btn-secondary w-75 mx-auto d-block">REGISTER</button>
+                <div class="text-center mt-3">
+                    Ya tienes cuenta? <a [routerLink]="'login'"> Haz clic aquí</a>
+                </div>
+            </form>
+
+            
     </div>
 </div>
 
