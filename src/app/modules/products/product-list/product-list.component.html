@@ -1,23 +1,21 @@
-<!--<shared-img [url]="'products/12.jpeg'" [w]="'100%'" [h]="'400px'"></shared-img>-->
 <div class="text-center container pt-4">
   <div>
-    <h1 class="text-center aboreto-regular">NATURAL BEAUTY SKINCARE</h1>
-    <p class="text-center adamina-regular">Experience a luxurious skincare solution meticulously designed to nourish,
-      protect and
-      enhance the natural beauty
-      of every skin</p>
+    <h1 class="text-center aboreto-regular display-4 display-md-3 display-lg-2">NATURAL BEAUTY SKINCARE</h1>
+    <p class="text-center adamina-regular lead">Experience a luxurious skincare solution meticulously designed to nourish, protect and enhance the natural beauty of every skin</p>
 
     <div>
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping"><img src="svg/search.svg" width="25px" height="25px"></span>
-        <input type="text" class="form-control" placeholder="Search your product" aria-label="Username"
-               aria-describedby="addon-wrapping" (input)="onSearch($event)">
+      <div class="input-group flex-nowrap w-100 w-md-75 w-lg-50 mx-auto">
+        <span class="input-group-text" id="addon-wrapping">
+          <img src="svg/search.svg" width="25px" height="25px">
+        </span>
+        <input type="text" class="form-control" placeholder="Search your product" aria-label="Username" aria-describedby="addon-wrapping" (input)="onSearch($event)">
       </div>
 
       <div class="container pt-5">
-        <!-- Pass the filtered products to the CardComponent -->
         <cards [products]="filteredProducts"></cards>
-        <pagination></pagination>
+        <div class="d-flex justify-content-center pt-5">
+          <pagination></pagination>
+        </div>
       </div>
     </div>
   </div>
