@@ -8,7 +8,7 @@ import {ProductsService} from '../../../core/services/products.service';
 @Component({
   selector: 'product-list',
   imports: [
-    ImgComponent, PaginationComponent, CardComponent
+     PaginationComponent, CardComponent
   ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
