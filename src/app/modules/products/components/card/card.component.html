@@ -3,7 +3,7 @@
     <div class="col-3 pt-4 pb-4">
       <div class="card mx-auto clickable-card" style="width: 18rem;" (click)="productDetails(product.id)">
         <img src="{{product.image_url}}" class="card-img-top" alt="..." width="60px" height="350px">
-        <div class="card-body">
+        <div class="card-body" style="height: 140px">
           <h5 class="card-title text-center aboreto-regular text-black">{{ product.product_name }}</h5>
           <p class="card-text text-center"> $ {{ product.price }}</p>
         </div>

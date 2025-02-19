@@ -3,14 +3,14 @@
     <ul class="pagination">
       <!-- Previous Button -->
       <li class="page-item mx-2" [class.disabled]="currentPage === 1">
-        <a class="page-link btn btn-primary btn-lg" aria-label="Previous" (click)="changePage(currentPage - 1)">
+        <a class="page-link" aria-label="Previous" (click)="changePage(currentPage - 1)">
           <span aria-hidden="true">&laquo; Previous</span>
         </a>
       </li>
 
       <!-- Next Button -->
-      <li class="page-item" [class.disabled]="currentPage === totalPages">
-        <a class="page-link btn btn-primary btn-lg" aria-label="Next" (click)="changePage(currentPage + 1)">
+      <li class="page-item mx-2" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" aria-label="Next" (click)="changePage(currentPage + 1)">
           <span aria-hidden="true">Next &raquo;</span>
         </a>
       </li>

@@ -36,9 +36,9 @@ export class ProductListComponent {
   }
 
   onSearch(event: Event): void {
-    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase();
+    const searchTerm = (event.target as HTMLInputElement).value.toUpperCase();
     this.filteredProducts = this.products.filter(product =>
-      product.product_name.toLowerCase().includes(searchTerm) ||
+      product.product_name.toUpperCase().includes(searchTerm) ||
       product.price.toString().includes(searchTerm)
     );
   }

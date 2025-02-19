@@ -10,3 +10,16 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.btn-primary {
+  background-color: #c69e5d;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #bf7738;
+}
