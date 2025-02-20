@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -23,11 +24,16 @@ export class LoginComponent {
     const foundUser = users.find((user: any) => user.email === emailInput && user.password === passwordInput);
 
     if (foundUser) {
+
       alert("Login successful!");
       localStorage.setItem('currentUser', JSON.stringify(foundUser));
-      this.router.navigate(['/']); 
+      this.router.navigate(['/']);
     } else {
-      alert("Invalid email or password.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Invalid email or password.",
+      });
     }
   }
 }

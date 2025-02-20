@@ -46,38 +46,7 @@ export class ProductDetailComponent {
       this.quantity--;
     }
   }
-  // saveProductToLocalStorage(product: Products, quantity: number) {
-  //   // Asignar la cantidad al producto
-  //   product.quantity = quantity;
-  //
-  //   // Obtener la lista de productos del localStorage
-  //   let productsList: Products[] = [];
-  //
-  //   // Verificar si ya existe una lista de productos en el localStorage
-  //   const storedProducts = localStorage.getItem('productsList');
-  //   if (storedProducts) {
-  //     // Si existe, parsear la lista de productos
-  //     productsList = JSON.parse(storedProducts);
-  //   }
-  //
-  //   // Verificar si el producto ya está en la lista
-  //   const existingProductIndex = productsList.findIndex(
-  //     (p) => p.id === product.id // Asume que cada producto tiene un `id` único
-  //   );
-  //
-  //   if (existingProductIndex !== -1) {
-  //     // Si el producto ya está en la lista, actualizar su cantidad
-  //     productsList[existingProductIndex].quantity += quantity;
-  //   } else {
-  //     // Si el producto no está en la lista, agregarlo
-  //     productsList.push(product);
-  //   }
-  //
-  //   // Guardar la lista actualizada en el localStorage
-  //   localStorage.setItem('productsList', JSON.stringify(productsList));
-  // }
 
-  // Método para guardar el producto en el localStorage
   saveProductToLocalStorage(product: Products, quantity: number) {
     // Asignar la cantidad al producto
     product.quantity = quantity;

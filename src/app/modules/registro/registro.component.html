@@ -41,7 +41,7 @@
                 </div>
             </form>
 
-            
+
     </div>
 </div>
 
@@ -57,7 +57,11 @@
         let dob = document.getElementById("dob").value;
 
         if (password !== confirmPassword) {
-            alert("Passwords do not match!");
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Passwords do not match!",
+          });
             return;
         }
 
@@ -70,6 +74,20 @@
         };
 
         localStorage.setItem("user", JSON.stringify(userData));
-        alert("Registration successful!");
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Registration successful!"
+      });
     });
 </script>
