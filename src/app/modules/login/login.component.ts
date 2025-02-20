@@ -24,8 +24,8 @@ export class LoginComponent {
 
     if (foundUser) {
       alert("Login successful!");
-      localStorage.setItem('currentUser', JSON.stringify(foundUser)); 
-      this.router.navigate(['/homePage']); 
+      localStorage.setItem('currentUser', JSON.stringify(foundUser));
+      this.router.navigate(['/']); 
     } else {
       alert("Invalid email or password.");
     }
