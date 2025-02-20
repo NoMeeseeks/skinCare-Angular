@@ -15,7 +15,7 @@
             <div class="d-flex justify-content-end mb-3">
                 <button (click)="goToPassword()" class="btn-link text-decoration-none text-muted forgot-password-btn" style="font-size: 13px;">FORGOT YOUR PASSWORD?</button>
             </div>
-            <button  class="btn btn-primary" [routerLink]="'/'">SIGN IN</button>
+            <button class="btn btn-primary" (click)="loginUser()">SIGN IN</button>
             <a class="d-block text-center mt-3" [routerLink]="'/register'">NOT A MEMBER? SIGN UP</a>
         </div>
     </div>
@@ -23,18 +23,3 @@
         <img src="Login/img1Login.jpg" class="img-fluid w-100 h-100" alt="Login Image" style="object-fit: cover;">
     </div>
 </div>
-<script>
-    document.getElementById('togglePassword').addEventListener('click', function () {
-        const passwordField = document.getElementById('password');
-        const icon = this.querySelector('i');
-        if (passwordField.type === 'password') {
-            passwordField.type = 'text';
-            icon.classList.remove('bi-eye-slash');
-            icon.classList.add('bi-eye');
-        } else {
-            passwordField.type = 'password';
-            icon.classList.remove('bi-eye');
-            icon.classList.add('bi-eye-slash');
-        }
-    });
-</script>
