@@ -3,9 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [
-    RouterLink
-  ],
+  imports: [RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,21 +18,16 @@ export class LoginComponent {
     let emailInput = (document.getElementById('email') as HTMLInputElement).value;
     let passwordInput = (document.getElementById('password') as HTMLInputElement).value;
 
-    let storedUser = localStorage.getItem('registeredUser');
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
 
-    if (storedUser) {
-      let userData = JSON.parse(storedUser);
+    const foundUser = users.find((user: any) => user.email === emailInput && user.password === passwordInput);
 
-      if (userData.email === emailInput && userData.password === passwordInput) {
-        alert("Login successful!");
-        localStorage.setItem('currentUser', JSON.stringify(userData)); // Guarda el usuario actual
-        this.router.navigate(['/homePage']); // Redirige a la homePage
-      } else {
-        alert("Invalid email or password.");
-      }
+    if (foundUser) {
+      alert("Login successful!");
+      localStorage.setItem('currentUser', JSON.stringify(foundUser)); 
+      this.router.navigate(['/homePage']); 
     } else {
-      alert("No registered user found.");
+      alert("Invalid email or password.");
     }
   }
-
 }

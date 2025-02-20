@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usuario',
-  imports: [],
   templateUrl: './perfil-usuario.component.html',
   styleUrl: './perfil-usuario.component.css'
 })
 export class PerfilUsuarioComponent implements OnInit {
   user: any;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
-    let storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-      this.user = JSON.parse(storedUser);
+    let currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+      this.user = JSON.parse(currentUser);
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 
@@ -22,12 +26,10 @@ export class PerfilUsuarioComponent implements OnInit {
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
-  
+
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
-  
     return age;
   }
-  
 }

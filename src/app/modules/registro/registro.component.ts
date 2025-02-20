@@ -3,9 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
-  imports: [
-    RouterLink
-  ],
+  imports: [RouterLink],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
@@ -27,9 +25,22 @@ export class RegistroComponent {
       return;
     }
 
-    let userData = { name, lastName, email, password, dob };
+    // Obtener usuarios existentes o inicializar un arreglo vacío
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
 
-    localStorage.setItem('registeredUser', JSON.stringify(userData));
+    // Verificar si el correo ya está registrado
+    const existingUser = users.find((user: any) => user.email === email);
+    if (existingUser) {
+      alert("This email is already registered.");
+      return;
+    }
+
+    // Crear el nuevo usuario
+    const newUser = { name, lastName, email, password, dob };
+    users.push(newUser); // Agregarlo al arreglo de usuarios
+
+    // Guardar en localStorage
+    localStorage.setItem('users', JSON.stringify(users));
 
     alert("Registration successful! Please log in.");
     this.router.navigate(['/login']);
