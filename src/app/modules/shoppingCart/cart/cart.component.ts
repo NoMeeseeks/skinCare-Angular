@@ -142,6 +142,7 @@ export class CartComponent {
   }
 
   chekout(){
+    localStorage.removeItem('productsList');
     const Toast = Swal.mixin({
       toast: true,
       position: "top-end",
